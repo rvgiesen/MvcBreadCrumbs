@@ -9,6 +9,8 @@ namespace MvcBreadCrumbs
 
 		public static State GetState(string id)
 		{
+			if (id == null) return null;
+
 			if (States.FirstOrDefault(x => x.SessionCookie == id) == null)
 			{
 				StateManager.CreateState(id);
